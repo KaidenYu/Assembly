@@ -13,7 +13,7 @@ ASRC = hello.s
 OBJS = hello.o
 PROG = hello
 
-PHONY: all
+.PHONY: all
 all: $(PROG)
 
 $(PROG): $(OBJS)
