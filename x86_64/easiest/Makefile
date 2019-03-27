@@ -9,9 +9,9 @@ CC = gcc
 LD = ld
 
 
-ASRC = hello.s
-OBJS = hello.o
-PROG = hello
+ASRC = easiest.s
+OBJS = easiest.o
+PROG = easiest
 
 .PHONY: all
 all: $(PROG)
