@@ -10,7 +10,7 @@ make
 
 step 3
 ```
-./hello
+./easiest
 ```
 
 step 4
