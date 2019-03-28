@@ -76,7 +76,8 @@ ld: warning: cannot find entry symbol _start; defaulting to 00000000004000b0
 we can see that there is no _start in hola.s(only main)
 the default entry point of the default linker script is _start
 
-how to check default linker script
+how to check default linker script: ld --verbose
+you can see "ENTRY(_start)"
 ```javascript
 kaiden@kaiden-X556UR:/home/assembly/Assembly/x86_64/hola$ ld --verbose
 GNU ld (GNU Binutils for Ubuntu) 2.26.1
