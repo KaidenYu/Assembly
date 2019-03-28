@@ -115,5 +115,5 @@ SECTIONS
 }
 ```
 
-
+### [linker script reference](https://hackmd.io/s/Sy7qcXy5X#)
 
