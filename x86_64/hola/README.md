@@ -73,11 +73,12 @@ about
 ```
 ld: warning: cannot find entry symbol _start; defaulting to 00000000004000b0
 ```
-we can see that there is no _start in hola.s(only main)
-the default entry point of the default linker script is _start
+we can see that there is no _start in hola.s(only main).The default entry point of the default linker script is _start
 
-how to check default linker script: ld --verbose
-
+how to check default linker script: 
+```
+ld --verbose
+```
 you can see "ENTRY(_start)"
 
 ```javascript
