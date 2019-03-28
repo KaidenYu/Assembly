@@ -28,3 +28,45 @@ gcc -static -o a.out hello.o -v
 ```
 
 ### [--- a post dicussing ld and gcc ---](https://stackoverflow.com/questions/6754259/how-to-call-the-c-library-from-assembly-code-on-linux)
+
+---
+using as and gcc -c
+```
+as hola.s -o hola_as.o
+objdump -Slz hola_as.o
+```
+```
+hola_as.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+main():
+   0:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+   7:	e8 00 00 00 00       	callq  c <main+0xc>
+   c:	c3                   	retq  
+```
+
+```
+gcc -c hola.s -o hola_gcc.o
+objdump -Slz hola_gcc.o
+```
+```
+hola_gcc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+main():
+   0:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+   7:	e8 00 00 00 00       	callq  c <main+0xc>
+   c:	c3                   	retq 
+```
+
+
+
+
+
+
