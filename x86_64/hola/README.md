@@ -27,4 +27,4 @@ you can find out wat to add by using gcc -v
 gcc -static -o a.out hello.o -v
 ```
 
-### [ a post dicussing ld and gcc ](https://stackoverflow.com/questions/6754259/how-to-call-the-c-library-from-assembly-code-on-linux)
+### [--- a post dicussing ld and gcc ---](https://stackoverflow.com/questions/6754259/how-to-call-the-c-library-from-assembly-code-on-linux)
