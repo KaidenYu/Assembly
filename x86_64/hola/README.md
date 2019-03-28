@@ -18,7 +18,7 @@ hola.o: In function `main':
 
 ```
 
-if you want to linking with ld, you need to add things like following
+if you want to do the linking with ld, you need to add a lot of things(paths and stuff) like following
 ```
 ld -static -o hello -L`gcc -print-file-name=` /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o hello.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbeginT.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o --start-group -lc -lgcc -lgcc_eh --end-grou
 ```
@@ -66,8 +66,50 @@ main():
    c:	c3                   	retq 
 ```
 
+the results are identical
 
+---
+about 
+```
+ld: warning: cannot find entry symbol _start; defaulting to 00000000004000b0
+```
+we can see that there is no _start in hola.s(only main)
+the default entry point of the default linker script is _start
 
+how to check default linker script
+```
+kaiden@kaiden-X556UR:/home/assembly/Assembly/x86_64/hola$ ld --verbose
+GNU ld (GNU Binutils for Ubuntu) 2.26.1
+  Supported emulations:
+   elf_x86_64
+   elf32_x86_64
+   elf_i386
+   elf_iamcu
+   i386linux
+   elf_l1om
+   elf_k1om
+   i386pep
+   i386pe
+using internal linker script:
+==================================================
+/* Script for -z combreloc: combine and sort reloc sections */
+/* Copyright (C) 2014-2015 Free Software Foundation, Inc.
+   Copying and distribution of this script, with or without modification,
+   are permitted in any medium without royalty provided the copyright
+   notice and this notice are preserved.  */
+OUTPUT_FORMAT("elf64-x86-64", "elf64-x86-64",
+	      "elf64-x86-64")
+OUTPUT_ARCH(i386:x86-64)
+ENTRY(_start)
+SEARCH_DIR("=/usr/local/lib/x86_64-linux-gnu"); SEARCH_DIR("=/lib/x86_64-linux-gnu"); SEARCH_DIR("=/usr/lib/x86_64-linux-gnu"); SEARCH_DIR("=/usr/local/lib64"); SEARCH_DIR("=/lib64"); SEARCH_DIR("=/usr/lib64"); SEARCH_DIR("=/usr/local/lib"); SEARCH_DIR("=/lib"); SEARCH_DIR("=/usr/lib"); SEARCH_DIR("=/usr/x86_64-linux-gnu/lib64"); SEARCH_DIR("=/usr/x86_64-linux-gnu/lib");
+SECTIONS
+{
+  /* Read-only sections, merged into text segment: */
+  ...
+  ...
+  ...
+}
+```
 
 
 
