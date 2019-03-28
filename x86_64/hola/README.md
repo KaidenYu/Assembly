@@ -30,7 +30,8 @@ gcc -static -o a.out hello.o -v
 ### [--- a post dicussing ld and gcc ---](https://stackoverflow.com/questions/6754259/how-to-call-the-c-library-from-assembly-code-on-linux)
 
 ---
-using as and gcc -c
+## using as and gcc -c
+- as
 ```
 as hola.s -o hola_as.o
 objdump -Slz hola_as.o
@@ -47,7 +48,7 @@ main():
    7:	e8 00 00 00 00       	callq  c <main+0xc>
    c:	c3                   	retq  
 ```
-
+- gcc -c
 ```
 gcc -c hola.s -o hola_gcc.o
 objdump -Slz hola_gcc.o
