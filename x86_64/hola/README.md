@@ -1,3 +1,15 @@
+Usage
+===
+
+
+```
+make
+./hola
+```
+
+Note
+===
+
 use 
 ```
 gcc hola.o -o hola
