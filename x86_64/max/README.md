@@ -13,7 +13,7 @@ make
 
 step 3
 ```
-./easiest
+./max
 ```
 
 step 4
