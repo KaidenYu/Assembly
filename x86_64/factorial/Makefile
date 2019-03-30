@@ -2,7 +2,7 @@ AS = as
 CC = gcc
 LD = ld
 
-PROG = sum
+PROG = factorial
 CSRC = $(wildcard *.c)
 ASRC = $(wildcard *.s)
 OBJS = $(CSRC:%.c=%.o) $(ASRC:%.s=%.o) # no space between ":"" and "%"
@@ -36,7 +36,8 @@ clean:
 	@echo
 
 .PHONY: print
-print:
+print:$(CSRC) $(ASRC) $(OBJS)
+
 	@echo "CSRC = " $(CSRC)
 	@echo "ASRC = " $(ASRC)
 	@echo "OBJS = " $(OBJS)
