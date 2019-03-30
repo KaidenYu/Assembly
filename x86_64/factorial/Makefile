@@ -36,8 +36,7 @@ clean:
 	@echo
 
 .PHONY: print
-print:$(CSRC) $(ASRC) $(OBJS)
-
+print:
 	@echo "CSRC = " $(CSRC)
 	@echo "ASRC = " $(ASRC)
 	@echo "OBJS = " $(OBJS)
