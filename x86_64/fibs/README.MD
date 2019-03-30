@@ -1,1 +1,7 @@
+Usage
+===
 
+```
+make
+./fibs
+```
